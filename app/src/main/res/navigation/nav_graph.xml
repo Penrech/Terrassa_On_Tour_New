@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mapFragment">
+
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.parcaudiovisualcatalunya.terrassaontour.MapView.MapFragment"
+        android:label="fragment_map"
+        tools:layout="@layout/fragment_map" >
+        <action
+            android:id="@+id/action_mapFragment_to_vuforiaFragment"
+            app:destination="@id/vuforiaFragment" />
+        <action
+            android:id="@+id/action_mapFragment_to_pointImageDetailFragment"
+            app:destination="@id/pointImageDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pointImageDetailFragment"
+        android:name="com.parcaudiovisualcatalunya.terrassaontour.PointImageDetailView.PointImageDetailFragment"
+        android:label="fragment_point_image_detail"
+        tools:layout="@layout/fragment_point_image_detail" />
+    <fragment
+        android:id="@+id/vuforiaFragment"
+        android:name="com.parcaudiovisualcatalunya.terrassaontour.VuforiaView.VuforiaFragment"
+        android:label="fragment_vuforia"
+        tools:layout="@layout/fragment_vuforia" >
+        <action
+            android:id="@+id/action_vuforiaFragment_to_multipleAudiovisualFragment"
+            app:destination="@id/multipleAudiovisualFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/multipleAudiovisualFragment"
+        android:name="com.parcaudiovisualcatalunya.terrassaontour.MultipleAudiovisualView.MultipleAudiovisualFragment"
+        android:label="fragment_multiple_audiovisual"
+        tools:layout="@layout/fragment_multiple_audiovisual" >
+        <action
+            android:id="@+id/action_multipleAudiovisualFragment_to_detailAudiovisualFragment"
+            app:destination="@id/detailAudiovisualFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailAudiovisualFragment"
+        android:name="com.parcaudiovisualcatalunya.terrassaontour.DetailAudiovisualView.DetailAudiovisualFragment"
+        android:label="fragment_detail_audiovisual"
+        tools:layout="@layout/fragment_detail_audiovisual" />
+</navigation>
